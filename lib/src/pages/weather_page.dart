@@ -19,14 +19,15 @@ class WeatherPage extends StatelessWidget {
   Widget build(BuildContext context) {
     CurrentWeather currentWeather = weather.currentWeather;
     WeatherInfo weatherInfo =
-        currentWeather.weatherInfo[0]; // 0: primay condition
+        currentWeather?.weatherInfo[0]; // 0: primay condition
 
     List<DailyWeather> dailyWeather =
         weather.dailyWeather.sublist(1); //the next 6 days
 
-    // print(location.toJson());
-    String temperature = currentWeather.temperature;
-    String humidty = currentWeather.humidity;
+    print(location.toJson());
+    print(weather.currentWeather);
+    String temperature = currentWeather?.temperature;
+    String humidty = currentWeather?.humidity;
     String main = weatherInfo.main;
     String description = weatherInfo.description;
 
@@ -56,7 +57,9 @@ class WeatherPage extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: location.fullName.length > 25
                                     ? 12
-                                    : location.fullName.length > 35 ? 8 : 24,
+                                    : location.fullName.length > 35
+                                        ? 8
+                                        : 24,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),

@@ -18,7 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Widget> listPages = List<Widget>();
+  List<Widget> listPages = [];
   Widget _currentPage;
   int _currentIndex;
 
@@ -195,12 +195,10 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'Weather'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit), title: const Text('Weather')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.wb_cloudy), title: const Text('Forcast')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.pin_drop), title: const Text('Map'))
+              icon: Icon(Icons.wb_cloudy), label: 'Forcast'),
+          BottomNavigationBarItem(icon: Icon(Icons.pin_drop), label: 'Map')
         ],
         onTap: (selectedIndex) => _changePage(selectedIndex),
       ),
