@@ -1,16 +1,18 @@
 # Iweather
 
-A new Flutter project.
+A Simple Weather Flutter application that the current forecast of a city.
 
-## Getting Started
+# Screenshot
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# How to run the app locally 
+1. Check that flutter is installed 
+`fluter --version`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+2. Intsalled the application dependices 
+`flutter pub get`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Run the application 
+`flutter run`
+
+
