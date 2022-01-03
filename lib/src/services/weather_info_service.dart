@@ -15,7 +15,7 @@ class WeatherInfoService {
       "https://api.openweathermap.org/data/2.5/onecall";
 
   final String keyParam = "&appid=";
-  final String openWeatherKey = "c04a103f23078b8f65c79d76829d71de";
+  final String openWeatherKey = "827f07100e6343c04d72de3053942a9f";
   final String latParam = "?lat=";
   final String lonParam = "&lon=";
   final String unitsParam = "&units=metric";
@@ -35,7 +35,6 @@ class WeatherInfoService {
         keyParam +
         openWeatherKey;
     // print('openWeatherAPI: ' + url);
-
     // if running on web to avoid cors problem
     /*
     if (kIsWeb) {
@@ -46,11 +45,12 @@ class WeatherInfoService {
       this.response = await http.get(url);
     }
     */
+    print("URL" + url);
 
     this.response = await http.get(url);
+
     if (response.statusCode == HttpStatus.ok) {
       final dynamic jsonResponse = json.decode(response.body);
-
       Weather weather = Weather.fromJson(json: jsonResponse);
       return weather;
     } else {

@@ -52,20 +52,23 @@ class _HomeState extends State<Home> {
       } else {
         this.visibleIcon = Icon(Icons.search);
         this.searchBar = Text('IWeather');
-        _getCurrentLocation();
+        // _getCurrentLocation();
       }
     });
   }
 
   Future<dynamic> _getCurrentLocation() async {
-    final l = await currentLocationService.getLocation();
+    final  l= await currentLocationService.getLocation();
 
     location = Location(
         latitude: l.latitude.toString(),
         longitude: l.longitude.toString(),
         time: convertToDatTime(l.time),
-        fullName: 'sdssd',
+        fullName: 'Monastir',
         continent: 'ASICA');
+
+
+    print(l); 
 
     weather = await weatherInfoService.getCurrentWeather(
         longitude: l.longitude.toString(), latitude: l.latitude.toString());
